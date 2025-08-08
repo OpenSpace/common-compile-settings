@@ -115,6 +115,7 @@ function (set_compile_options target)
   target_compile_options(${target} INTERFACE
     "/wd4127"   # conditional expression is constant [raised by: websocketpp]
     "/wd4201"   # nonstandard extension used : nameless struct/union
+    "/wd4068"   # unknown pragma
     "/wd5030"   # attribute 'attribute' is not recognized  [raised by: codegen]
   )
 
