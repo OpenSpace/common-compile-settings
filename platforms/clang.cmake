@@ -26,15 +26,13 @@
 # Last pass through the MSVC warning list:
 # https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html
 
+
 function (set_compile_options target)
   target_compile_options(${target} INTERFACE
     "-Wall"
     "-Wextra"
     "-Wmost"
     "-Wpedantic"
-  )
-
-  target_compile_options(${target} INTERFACE
     "-Wabstract-vbase-init"
     "-Walloca"
     "-Wanon-enum-enum-conversion"

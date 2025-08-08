@@ -31,7 +31,7 @@ function (set_compile_options target)
   target_compile_options(${target} INTERFACE
     "/MP"              # Multi-threading support
     "/permissive-"     # Enable conformance mode
-    "/Ehsc"            # Exception handling
+    "/EHsc"            # Exception handling
     "/Zc:__cplusplus"  # Correctly set the __cplusplus macro
     "/Zc:strictStrings-"    # Windows header don't adhere to this   @CHECK
   )
@@ -148,5 +148,6 @@ function (set_compile_options target)
       target_compile_options(${target} INTERFACE
         "/ZI" # Edit and continue support
       )
+    endif ()
   endif ()
 endfunction()
