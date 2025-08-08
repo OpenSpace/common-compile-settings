@@ -58,7 +58,6 @@ function (set_compile_settings target)
     # https://github.com/llvm/llvm-project/issues/61415
     target_compile_features(compile_settings INTERFACE cxx_std_20)
     set_compile_options(compile_settings)
-    target_link_libraries(${target} INTERFACE compile_settings)
   endif ()
 
   target_link_libraries(${target} PRIVATE compile_settings)
