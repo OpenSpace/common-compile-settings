@@ -113,7 +113,6 @@ function (set_compile_options target)
     "-Wmain"
     "-Wmethod-signatures"
     "-Wmissing-field-initializers"
-    "-Wmissing-include-dirs"
     "-Wmissing-method-return-type"
     "-Wmissing-noreturn"
     "-Wmissing-variable-declarations"
