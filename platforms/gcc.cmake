@@ -79,5 +79,5 @@ function (set_compile_options target)
   #   "-Wno-sign-compare"
     # "-Wno-unknown-attributes"
   #   "-Wno-write-strings"
-  # )
+  )
 endfunction()
