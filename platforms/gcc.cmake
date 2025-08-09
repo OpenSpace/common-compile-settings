@@ -33,9 +33,9 @@ function (set_compile_options target)
   )
 
   target_compile_options(${target} INTERFACE
-  "-Wall"
-  "-Wextra"
-  "-Wpedantic"
+    "-Wall"
+    "-Wextra"
+    "-Wpedantic"
     "-Walloc-zero"
     "-Wcast-qual"
     "-Wdate-time"
@@ -59,14 +59,14 @@ function (set_compile_options target)
     )
 
   target_compile_options(${target} INTERFACE
-  #   "-Wno-attributes"
+    "-Wno-attributes"
   #   "-Wno-deprecated-copy"
   #   "-Wno-deprecated-enum-enum-conversion"
   #   "-Wno-float-equal"
   #   "-Wno-ignored-attributes"
   #   "-Wno-long-long"
-  #   "-Wno-missing-field-initializers"
-  #   "-Wno-sign-compare"
+    "-Wno-missing-field-initializers"
+    # "-Wno-sign-compare"
     # "-Wno-unknown-attributes"
   #   "-Wno-write-strings"
   )
