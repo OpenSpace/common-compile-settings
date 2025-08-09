@@ -185,6 +185,7 @@ function (set_compile_options target)
     # "-Wno-ignored-attributes"
     "-Wno-reserved-macro-identifier"
     "-Wno-missing-prototypes"
+    "-Wno-implicit-int-float-conversion"
     # "-Wno-sign-compare"
     "-Wno-sign-conversion"
     # "-Wno-suggest-destructor-override"
