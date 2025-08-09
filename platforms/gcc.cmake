@@ -24,7 +24,7 @@
 ##########################################################################################
 
 # Last pass through the MSVC warning list:
-https://gcc.gnu.org/onlinedocs/gcc-13.4.0/gcc/Warning-Options.html
+# https://gcc.gnu.org/onlinedocs/gcc-13.4.0/gcc/Warning-Options.html
 
 
 function (set_compile_options target)
