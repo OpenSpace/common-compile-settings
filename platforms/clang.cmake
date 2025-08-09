@@ -113,7 +113,7 @@ function (set_compile_options target)
     "-Wkeyword-macro"
     "-Wlanguage-extension-token"
     "-Wlocal-type-template-args"
-    "-Wlogical-op-parantheses"
+    "-Wlogical-op-parentheses"
     "-Wloop-analysis"
     "-Wmain"
     "-Wmethod-signatures"
@@ -121,7 +121,6 @@ function (set_compile_options target)
     "-Wmissing-include-dirs"
     "-Wmissing-method-return-type"
     "-Wmissing-noreturn"
-    "-Wmissing-prototypes"
     "-Wmissing-variable-declarations"
     "-Wnarrowing"
     "-Wnewline-eof"
@@ -137,7 +136,6 @@ function (set_compile_options target)
     "-Wpragma-pack"
     "-Wpragmas"
     "-Wrange-loop-analysis"
-    "-Wreserved-id-macro"
     "-Wreserved-identifier"
     "-Wreserved-user-defined-literal"
     "-Wsemicolon-before-method-body"
@@ -193,9 +191,11 @@ function (set_compile_options target)
     # "-Wno-missing-braces"
     # "-Wno-missing-designated-field-initializers"
     # "-Wno-ignored-attributes"
+    "-Wno-missing-prototypes"
     # "-Wno-sign-compare"
     # "-Wno-suggest-destructor-override"
     "-Wno-unknown-attributes"
+    "-Wno-switch-default"
 
     # This should be removed as soon as https://github.com/g-truc/glm/issues/1349 is
     # addressed
