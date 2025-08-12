@@ -40,7 +40,6 @@ function (set_compile_options target)
     "-Wassign-enum"
     "-Watomic-implicit-seq-cst"
     "-Watomic-properties"
-    "-Wauto-decl-extensions"
     "-Wbad-function-cast"
     "-Wbind-to-temporary-copy"
     "-Wbit-int-extension"
@@ -63,7 +62,6 @@ function (set_compile_options target)
     "-Wconversion"
     "-Wdate-time"
     "-Wdeclaration-after-statement"
-    "-Wdecls-in-multiple-modules"
     "-Wdeprecated-copy"
     "-Wdeprecated-copy-dtor"
     "-Wdeprecated-dynamic-exception-spec"
@@ -91,10 +89,8 @@ function (set_compile_options target)
     "-Wformat-non-iso"
     "-Wformat-nonliteral"
     "-Wformat-pedantic"
-    "-Wformat-signedness"
     "-Wformat-type-confusion"
     "-Wfour-char-constants"
-    "-Wfunction-effects"
     "-Wheader-hygiene"
     "-Widiomatic-parentheses"
     "-Wimplicit-fallthrough"
@@ -145,7 +141,6 @@ function (set_compile_options target)
     "-Wtautological-type-limit-compare"
     "-Wtautological-value-range-compare"
     "-Wthread-safety"
-    "-Wthread-safety-reference-return"
     "-Wthread-safety-verbose"
     "-Wtype-limits"
     "-Wunaligned-access"
@@ -174,13 +169,37 @@ function (set_compile_options target)
     "-Wno-c++98-compat-bind-to-temporary-copy"
     "-Wno-deprecated-copy-with-dtor"
     "-Wno-deprecated-enum-enum-conversion"
-    "-Wno-missing-designated-field-initializers"
     "-Wno-reserved-macro-identifier"
     "-Wno-missing-prototypes"
     "-Wno-implicit-int-float-conversion"
     "-Wno-sign-conversion"
     "-Wno-unknown-attributes"
   )
+
+  # Warnings introduced in Clang version 18
+  if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "18")
+    target_compile_options(${target} INTERFACE
+      "-Wauto-decl-extensions"
+      "-Wthread-safety-reference-return"
+    )
+  endif ()
+
+  # Warnings introduced in Clang version 19
+  if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "19")
+    target_compile_options(${target} INTERFACE
+      "-Wformat-signedness"
+      "-Wfunction-effects"
+
+      "-Wno-missing-designated-field-initializers"
+    )
+  endif ()
+
+  # Warnings introduced in Clang version 20
+  if (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "20")
+    target_compile_options(${target} INTERFACE
+      "-Wdecls-in-multiple-modules"
+    )
+  endif ()
 
   if (APPLE)
     # Apple has "deprecated" OpenGL and offers nothing but warnings instead
