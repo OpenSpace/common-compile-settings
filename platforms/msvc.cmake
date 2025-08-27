@@ -27,7 +27,7 @@
 # Last pass through the MSVC warning list: 17.13 || 2025-08-08
 
 
-function (set_compile_options target)
+function (internal__set_compile_options target)
   target_compile_options(${target} INTERFACE
     "/MP"              # Multi-threading support
     "/permissive-"     # Enable conformance mode

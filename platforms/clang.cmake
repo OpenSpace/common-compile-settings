@@ -27,7 +27,7 @@
 # https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html
 
 
-function (set_compile_options target)
+function (internal__set_compile_options target)
   target_compile_options(${target} INTERFACE
     "-Wall"
     "-Wextra"

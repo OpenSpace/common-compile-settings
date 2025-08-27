@@ -27,7 +27,7 @@
 # https://gcc.gnu.org/onlinedocs/gcc-13.4.0/gcc/Warning-Options.html
 
 
-function (set_compile_options target)
+function (internal__set_compile_options target)
   target_compile_options(${target} INTERFACE
     "-ggdb"
   )
