@@ -56,7 +56,11 @@ function (set_compile_settings target)
 
     # Switching to cxx_std_23 triggers a bug in Clang17
     # https://github.com/llvm/llvm-project/issues/61415
-    target_compile_features(compile_settings INTERFACE cxx_std_20)
+    if (MSVC)
+      target_compile_features(compile_settings INTERFACE cxx_std_23)
+    else ()
+      target_compile_features(compile_settings INTERFACE cxx_std_20)
+    endif ()
     internal__set_compile_options(compile_settings)
   endif ()
 
