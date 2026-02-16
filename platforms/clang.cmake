@@ -199,9 +199,4 @@ function (internal__set_compile_options target)
       "-Wdecls-in-multiple-modules"
     )
   endif ()
-
-  if (APPLE)
-    # Apple has "deprecated" OpenGL and offers nothing but warnings instead
-    target_compile_definitions(${target} INTERFACE "GL_SILENCE_DEPRECATION" "__gl_h_")
-  endif ()
 endfunction()
