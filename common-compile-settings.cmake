@@ -52,14 +52,7 @@ endif ()
 function (set_compile_settings target)
   if (NOT TARGET compile_settings)
     add_library(compile_settings INTERFACE)
-
-    # Switching to cxx_std_23 triggers a bug in Clang17
-    # https://github.com/llvm/llvm-project/issues/61415
-    if (MSVC)
-      target_compile_features(compile_settings INTERFACE cxx_std_23)
-    else ()
-      target_compile_features(compile_settings INTERFACE cxx_std_20)
-    endif ()
+    target_compile_features(compile_settings INTERFACE cxx_std_23)
     internal__set_compile_options(compile_settings)
   endif ()
 
