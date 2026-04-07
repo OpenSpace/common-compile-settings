@@ -32,7 +32,6 @@ function (internal__set_compile_options target)
     "/permissive-"     # Enable conformance mode
     "/EHsc"            # Exception handling
     "/Zc:__cplusplus"  # Correctly set the __cplusplus macro
-    "/Zc:strictStrings-"    # Windows header don't adhere to this   @CHECK
   )
 
   target_compile_options(${target} INTERFACE
